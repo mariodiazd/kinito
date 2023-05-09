@@ -4,6 +4,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { liveQuery } from 'dexie';
 import { ToastrService } from 'ngx-toastr';
 import { User, UsersList, db } from '../db/db';
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 @Component({
   selector: 'app-home',
@@ -56,7 +57,7 @@ export class HomeComponent implements OnInit {
   ];
   usersList$ = liveQuery(() => db.usersList.toArray());
   users$ = liveQuery(() => this.getUsers());
-
+  isMobile:boolean = false;
   currentTime: any = `${
     this.months[this.targetDate.getMonth()]
   } ${this.targetDate.getDate()}, ${this.targetDate.getFullYear()}`;
@@ -65,26 +66,44 @@ export class HomeComponent implements OnInit {
   @ViewChild('hours', { static: true }) hours!: ElementRef;
   @ViewChild('minutes', { static: true }) minutes!: ElementRef;
   @ViewChild('seconds', { static: true }) seconds!: ElementRef;
+  @ViewChild('mdays', { static: true }) mdays!: ElementRef;
+  @ViewChild('mhours', { static: true }) mhours!: ElementRef;
+  @ViewChild('mminutes', { static: true }) mminutes!: ElementRef;
+  @ViewChild('mseconds', { static: true }) mseconds!: ElementRef;
   @ViewChild('options') text!: ElementRef;
   @ViewChild('button') btn!: ElementRef;
 
   constructor(
     private toastr: ToastrService,
     private modalService: NgbModal,
+    private deviceDetector:DeviceDetectorService,
     private router: Router
-  ) {}
+  ) {
+
+  }
 
   ngAfterViewInit() {
+    this.isMobile = this.checkIfMobile();
     this.recreateDB();
-    setInterval(() => {
-      this.tickTock();
-      this.difference = this.targetTime - this.now;
-      this.difference = this.difference / (1000 * 60 * 60 * 24);
 
-      !isNaN(this.days.nativeElement.innerText)
-        ? (this.days.nativeElement.innerText = Math.floor(this.difference))
-        : (this.days.nativeElement.innerHTML = `<img src="https://i.gifer.com/VAyR.gif" />`);
-    }, 1000);
+    if (!this.isMobile)
+    {
+      setInterval(() => {
+        this.tickTock();
+        this.difference = this.targetTime - this.now;
+        this.difference = this.difference / (1000 * 60 * 60 * 24);
+
+        !isNaN(this.days.nativeElement.innerText)
+          ? (this.days.nativeElement.innerText = Math.floor(this.difference))
+          : (this.days.nativeElement.innerHTML = `<img src="https://i.gifer.com/VAyR.gif" />`);
+      }, 1000);
+    }
+
+
+  }
+
+  checkIfMobile(){
+    return this.deviceDetector.isMobile();
 
   }
 
@@ -109,7 +128,18 @@ export class HomeComponent implements OnInit {
     this.seconds.nativeElement.innerText = 60 - this.date.getSeconds();
   }
 
+  tickTockM() {
+    this.date = new Date();
+    this.now = this.date.getTime();
+    this.mdays.nativeElement.innerText = Math.floor(this.difference);
+    this.mhours.nativeElement.innerText = 23 - this.date.getHours();
+    this.mminutes.nativeElement.innerText = 60 - this.date.getMinutes();
+    this.mseconds.nativeElement.innerText = 60 - this.date.getSeconds();
+  }
+
   ngOnInit() {
+    this.isMobile = this.checkIfMobile();
+    console.log(this.isMobile);
     this.getListUsers();
   }
 

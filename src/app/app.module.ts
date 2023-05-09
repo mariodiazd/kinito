@@ -8,8 +8,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { KinitoComponent } from './kinito/kinito.component';
 import { HomeComponent } from './home/home.component';
-import { CountdownModule } from 'ngx-countdown';
 import { AdminComponent } from './admin/admin.component';
+import { CountdownTimerModule } from 'projects/countdown-timer/src/lib/countdown-timer.module';
 
 @NgModule({
   declarations: [
@@ -17,13 +17,13 @@ import { AdminComponent } from './admin/admin.component';
     UserlistComponent,
     KinitoComponent,
     HomeComponent,
-    AdminComponent
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    CountdownTimerModule,
     AppRoutingModule,
-    CountdownModule,
     FormsModule,
     ToastrModule.forRoot({
       timeOut: 3000,
