@@ -9,9 +9,10 @@
     "postinstall": "ng build --prod",
     "test": "ng test"
   },
+  "heroku-postbuild": "ng build",
   "engines": {
-    "node": "19.8.1",
-    "npm": "9.5.1"
+    "node": "16.15.0",
+    "npm": "8.5.5"
   },
 
   "private": true,
