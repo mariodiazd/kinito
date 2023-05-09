@@ -10,17 +10,19 @@
   },
   "heroku-postbuild": "ng build",
   "engines": {
-    "node": "19.8.1",
-    "npm": "9.5.1"
+    "node": "16.15.0",
+    "npm": "8.5.5"
   },
+
   "private": true,
   "dependencies": {
+    "typescript": "~4.6.2",
+    "@angular/cli": "1.4.9",
+    "@angular/compiler-cli": "^4.4.6",
     "@angular/animations": "~13.3.0",
     "@angular/cdk": "^13.3.0",
-    "@angular/cli": "1.4.9",
     "@angular/common": "~13.3.0",
     "@angular/compiler": "~13.3.0",
-    "@angular/compiler-cli": "^4.4.6",
     "@angular/core": "~13.3.0",
     "@angular/forms": "~13.3.0",
     "@angular/material": "^13.3.0",
@@ -30,15 +32,12 @@
     "@ng-bootstrap/ng-bootstrap": "^5.0.0",
     "bootstrap": "^5.2.3",
     "dexie": "^3.2.3",
-    "express": "^4.18.2",
     "jquery": "^3.6.4",
     "ngx-countdown": "^13.0.0",
     "ngx-toastr": "^14.3.0",
-    "path": "^0.12.7",
     "popper.js": "^1.16.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
-    "typescript": "~4.6.2",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
