@@ -19,6 +19,74 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
+
+.cuadro{
+  margin-top: 20px;
+}
+
+.c{
+  margin-left: 20px;
+}
+
+.s{
+  margin-left: -10px;
+}
+
+.f{
+  margin-left: -40px;
+}
+
+.roundFinal{
+  margin-top: 170px;
+  margin-right: 145px;
+}
+
+.bracket{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  width: 200px;
+  height: 60px;
+  border:1px solid lightgray;
+  margin: 20px;
+  span{
+    color: white;
+    font-size: bold;
+    align-self: center;
+    vertical-align: middle;
+  }
+}
+
+.bracketOne{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  width: 200px;
+  height: 60px;
+  border:1px solid lightgray;
+  margin: 40px;
+  span{
+    color: white;
+    font-size: bold;
+    align-self: center;
+    vertical-align: middle;
+  }
+}
+
+.roundOne{
+  margin-right: 80px;
+}
+
+.roundTwo{
+  margin-top: 70px;
+  margin-right: 80px;
+}
+
+.champion{
+ margin-top: 220px;
+}
 }
 
 
