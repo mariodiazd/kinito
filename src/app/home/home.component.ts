@@ -85,7 +85,11 @@ export class HomeComponent implements OnInit {
         ? (this.days.nativeElement.innerText = Math.floor(this.difference))
         : (this.days.nativeElement.innerHTML = `<img src="https://i.gifer.com/VAyR.gif" />`);
     }, 1000);
-      this.audio.nativeElement.play();
+
+  }
+
+  comenzarFake(){
+    this.audio.nativeElement.play();
       this.text.nativeElement.innerHTML = `autoplay: ${
         this.audio.nativeElement.autoplay ? 'on' : 'off'
       } loop: ${this.audio.nativeElement.loop} muted: ${
