@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'home/:admin', component: HomeComponent },
   { path: 'participantes', component: KinitoComponent },
-  { path: 'admin', component: AdminComponent },
+  { path: 'playoffs', component: AdminComponent },
   { path: 'clasi', component: UserlistComponent },
 ];
 

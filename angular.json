@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "mario-bth": {
+    "kinitos-league": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/mario-bth",
+            "outputPath": "dist/kinitos-league",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -78,10 +78,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "mario-bth:build:production"
+              "browserTarget": "kinitos-league:build:production"
             },
             "development": {
-              "browserTarget": "mario-bth:build:development"
+              "browserTarget": "kinitos-league:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -89,7 +89,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "mario-bth:build"
+            "browserTarget": "kinitos-league:build"
           }
         },
         "test": {
@@ -148,7 +148,7 @@
       }
     }
   },
-  "defaultProject": "mario-bth",
+  "defaultProject": "kinitos-league",
   "cli": {
     "analytics": false
   }
