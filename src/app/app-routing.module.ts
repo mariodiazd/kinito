@@ -7,7 +7,9 @@ import { AdminComponent } from './admin/admin.component';
 import { UserlistComponent } from './userlist/userlist.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', pathMatch: 'full', redirectTo: 'home'},
+  { path: 'home', component: HomeComponent },
+  { path: 'home/:admin', component: HomeComponent },
   { path: 'participantes', component: KinitoComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'clasi', component: UserlistComponent },

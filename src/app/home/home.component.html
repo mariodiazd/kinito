@@ -33,7 +33,9 @@
 ></ctimer-countdown-timer>
       </div>
       <div class="d-flex justify-content-center text-center">
-        <button (click)="comenzarFake()">COMENZAR</button>
+        <button *ngIf="!admin" (click)="comenzarFake()">COMENZAR</button>
+        <button *ngIf="admin" (click)="goToParticipantes()">COMENZAR</button>
+        <button *ngIf="admin" (click)="recreateDB()"> RESET DB</button>
       </div>
 
     </div>

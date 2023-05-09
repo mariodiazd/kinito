@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { liveQuery } from 'dexie';
 import { ToastrService } from 'ngx-toastr';
@@ -57,6 +57,7 @@ export class HomeComponent implements OnInit {
   ];
   usersList$ = liveQuery(() => db.usersList.toArray());
   users$ = liveQuery(() => this.getUsers());
+  admin:boolean = false;
   isMobile:boolean = false;
   currentTime: any = `${
     this.months[this.targetDate.getMonth()]
@@ -77,29 +78,18 @@ export class HomeComponent implements OnInit {
     private toastr: ToastrService,
     private modalService: NgbModal,
     private deviceDetector:DeviceDetectorService,
+    private activatedRoute: ActivatedRoute,
     private router: Router
   ) {
+    if (this.activatedRoute.snapshot.params['admin'])
+    {
+      this.admin = true;
+    }
 
   }
 
   ngAfterViewInit() {
     this.isMobile = this.checkIfMobile();
-    this.recreateDB();
-
-    if (!this.isMobile)
-    {
-      setInterval(() => {
-        this.tickTock();
-        this.difference = this.targetTime - this.now;
-        this.difference = this.difference / (1000 * 60 * 60 * 24);
-
-        !isNaN(this.days.nativeElement.innerText)
-          ? (this.days.nativeElement.innerText = Math.floor(this.difference))
-          : (this.days.nativeElement.innerHTML = `<img src="https://i.gifer.com/VAyR.gif" />`);
-      }, 1000);
-    }
-
-
   }
 
   checkIfMobile(){
@@ -117,24 +107,6 @@ export class HomeComponent implements OnInit {
 
       this.btn.nativeElement.click();
       this.audio.nativeElement.play();
-  }
-
-  tickTock() {
-    this.date = new Date();
-    this.now = this.date.getTime();
-    this.days.nativeElement.innerText = Math.floor(this.difference);
-    this.hours.nativeElement.innerText = 23 - this.date.getHours();
-    this.minutes.nativeElement.innerText = 60 - this.date.getMinutes();
-    this.seconds.nativeElement.innerText = 60 - this.date.getSeconds();
-  }
-
-  tickTockM() {
-    this.date = new Date();
-    this.now = this.date.getTime();
-    this.mdays.nativeElement.innerText = Math.floor(this.difference);
-    this.mhours.nativeElement.innerText = 23 - this.date.getHours();
-    this.mminutes.nativeElement.innerText = 60 - this.date.getMinutes();
-    this.mseconds.nativeElement.innerText = 60 - this.date.getSeconds();
   }
 
   ngOnInit() {
