@@ -1,0 +1,129 @@
+.title{
+  display: flex;
+  align-items: center;
+  height: 18%;
+  color: whitesmoke;
+  justify-content: center;
+}
+.container-card{
+  height: 60%;
+}
+
+
+
+h3, h5{
+  color: white;
+}
+
+#contentModalUser{
+  label{
+    color: black;
+  }
+}
+
+.modalInput{
+  color:black;
+  border: 1px solid black;
+  background-color: black;
+}
+
+.labelInput{
+  color: black;
+}
+
+select{
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 5px;
+  color: violet;
+  text-align: center;
+  height: 40px;
+  margin: 10px;
+}
+
+label{
+  color: white;
+  font-weight: 10px;
+}
+
+select:focus{
+  background-color: transparent;
+  border: 1px solid violet;
+  border-radius: 5px;
+  color: violet;
+  text-align: center;
+  height: 40px;
+  margin: 10px;
+}
+
+
+
+.count-down-timer {
+  box-shadow: 2px 6px 9px 2px rgb(0 0 0 / 20%);
+  border: 1px solid white;
+  text-align: center;
+  padding: 20px 80px 20px 80px;
+  max-width: 800px;
+  margin: 20px auto;
+  color: whitesmoke;
+  border-radius: 6px;
+  font-family: sans-serif;
+
+  > p {
+    margin: 10px 0 15px 0;
+  }
+
+  .wrapper {
+    .description,
+    .times {
+      display: grid;
+      grid-template-columns: repeat(4, calc(25% - 8px));
+      grid-column-gap: 10px;
+    }
+
+    .description {
+      > p {
+        margin: 5px;
+        font: normal 20px sans-serif;
+      }
+    }
+
+    .times {
+      p {
+        letter-spacing: -5px;
+        position: relative;
+        margin: 0;
+        font: normal 60px courier, sans-serif;
+        ::ng-deep img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 30px;
+          display: block;
+          height: 30px;
+        }
+      }
+    }
+  }
+}
+.card{
+  display: flex;
+  background-color: white;
+  padding: 20px;
+  border-radius: 40px;
+  background:orange;
+  height: 100%;
+  width: 700px;
+  color: whitesmoke;
+}
+.card-2{
+  display: flex;
+  background-color: white;
+  padding: 20px;
+  border-radius: 40px;
+  background:rgba(255,255,255,0.1);
+  height: 100%;
+  width: 900px;
+  color: whitesmoke;
+}

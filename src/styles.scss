@@ -1,1 +1,90 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'ngx-toastr/toastr';
+
+body,
+html {
+  height: 100%;
+  background-color: transparent;
+  margin: 0px;
+  padding: 0px;
+  background-image: url("./assets/image/bgnito.jpg");
+  /* Full height */
+  height: 100vh;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-size: cover;
+}
+
+.dark-modal .modal-content {
+  background-color: #292b2c;
+  color: white;
+  text-align: center;
+}
+
+.dark-modal .modal-header {
+}
+
+input{
+  text-align: center;
+  background-color: transparent;
+  border: 2px solid #1c262f;
+  border-radius: 5px;
+  color: #1c262f;
+  text-align: center;
+  height: 40px;
+  margin: 10px;
+}
+input:focus{
+  text-align: center;
+  background-color: transparent;
+  border: 2px solid #1c262f;
+  border-radius: 5px;
+  color: #1c262f;
+  text-align: center;
+  height: 40px;
+  margin: 10px;
+}
+
+@font-face {
+  font-family: "Prompt-Bold";
+  src: url(./assets/fonts/Prompt-BoldItalic.ttf);
+}
+
+@font-face {
+  font-family: "Prompt-Regular";
+  src: url(./assets/fonts/Prompt-Regular.ttf);
+}
+
+.title{
+  font-size: 60px;
+  color: white;
+  font-family: 'Prompt-Bold';
+}
+
+.subtitle{
+  font-size: 40px;
+  color: white;
+  font-family: 'Prompt-Bold';
+}
+
+.bg {
+
+
+}
+
+button{
+  color: white;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 5px;
+  width: 200px;
+  height: 50px;
+  padding: 10px 5px 10px 5px;
+  margin: 40px 40px 40px 40px;
+  &:hover{
+    color: #1c262f;
+    background-color: white;
+  }
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

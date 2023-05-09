@@ -1,0 +1,154 @@
+<ng-template #modalPareja let-modal>
+  <div class="modal-header">
+
+  </div>
+  <div class="container-teams">
+    <div class="container card-profile-teams">
+      <div class="d-flex flex-row justify-content-around">
+        <div>
+          <div>
+            <img
+              alt="pareja1"
+              style="height: 100px"
+              class="circular--square"
+              src="{{ selectedPareja.playerOne.photo }}"
+            />
+          </div>
+          <div class="d-flex justify-content-center">
+            <label>{{ selectedPareja.playerOne.name }}</label>
+          </div>
+        </div>
+        <div>
+          <div>
+            <img
+              alt="pareja2"
+              style="height: 100px"
+              class="circular--square"
+              src="{{ selectedPareja.playerTwo.photo }}"
+            />
+          </div>
+          <div class="d-flex justify-content-center">
+            <label>{{ selectedPareja.playerTwo.name }}</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="subtitle text-center d-flex justify-content-center">
+      <input class="text-center" style="width:300px" type="text" class="form-control" placeholder="Introduce nombre del equipo" [(ngModel)]="selectedPareja.name">
+
+    </div>
+    <button style="font-size: 14px;" (click)="saveTeam(selectedPareja)">GUARDAR EQUIPO</button>
+  </div>
+</ng-template>
+
+<ng-template #mymodal let-modal>
+  <div class="modal-header">
+    <h4 class="subtitle" style="color: #1c262f" id="modal-basic-title">
+      AÑADIR PARTICIPANTE
+    </h4>
+  </div>
+  <div class="modal-body">
+    <input
+      placeholder="Nombre"
+      class="form-control"
+      type="text"
+      [(ngModel)]="newUser.name"
+    />
+    <input
+      placeholder="Apellido"
+      class="form-control"
+      type="text"
+      [(ngModel)]="newUser.firstName"
+    />
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="addUser()">
+      AÑADIR PARTICIPANTE
+    </button>
+  </div>
+</ng-template>
+<div class="wrapper">
+  <div class="header-title">
+    <button (click)="mostrarParticipantes()" class="subtitle" style="margin-top: 60px"
+      >Players</button
+    >
+    <button (click)="mostrarEquipos()" class="subtitle" style="margin-top: 60px"
+      >Teams</button
+    >
+  </div>
+  <div *ngIf="showParticipantes" class="container-participants">
+    <div class="grid" style="margin-top: 40px">
+      <ng-container *ngFor="let user of users">
+        <div style="margin: 20px">
+          <div class="container card-profile">
+
+            <div class="d-flex flex-row">
+              <div>
+                <img alt="foto"
+                  style="height: 100px"
+                  class="circular--square"
+                  src="{{ user.photo }}"
+                />
+              </div>
+              <div
+                class="d-flex justify-content-center"
+                style="margin-top: 40px; margin-left: 20px"
+              >
+                <label>{{ user.name }} {{ user.firstName }}</label>
+
+              </div>
+              <div class="d-flex justify-content-end">
+                <button style="width: 40px;" (click)="deleteUser(user.id)">X</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center">
+    <button *ngIf="showSortear" (click)="sorteo()">¡SORTEAR!</button>
+    <button *ngIf="showSortear" (click)="openModal(mymodal)">AÑADIR PARTICIPANTE</button>
+    <button (click)="goToClasificacion()">EMPEZAR TORNEO</button>
+  </div>
+  <div *ngIf="showTeams" class="container-teams">
+    <div class="grid-teams" style="margin-top: 20px">
+      <ng-container *ngFor="let team of teamsList">
+        <div style="margin: 10px">
+          <div class="container card-profile-teams">
+            <div style="color: white" class="text-center">{{team.name}}</div>
+            <div class="d-flex flex-row justify-content-around">
+              <div>
+                <div>
+                  <img
+                    alt="pareja1"
+                    style="height: 100px"
+                    class="circular--square"
+                    src="{{ team.playerOne.photo }}"
+                  />
+                </div>
+                <div class="d-flex justify-content-center">
+                  <label>{{ team.playerOne.name }}</label>
+                </div>
+              </div>
+              <div>
+                <div>
+                  <img
+                    alt="pareja2"
+                    style="height: 100px"
+                    class="circular--square"
+                    src="{{ team.playerTwo.photo }}"
+                  />
+                </div>
+                <div class="d-flex justify-content-center">
+                  <label>{{ team.playerTwo.name }}</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+
+
+<ng-template #mymodal let-modal>
+  <div class="modal-header">
+    <h4 class="subtitle" style="color:#1c262f" id="modal-basic-title">ACCESO AREA ADMIN</h4>
+  </div>
+  <div class="modal-body">
+      <input placeholder="Nombre" class="form-control" type="text" [(ngModel)]="nombre">
+      <input placeholder="Password" class="form-control" type="password" [(ngModel)]="password">
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="loginAdmin()">LOGIN</button>
+  </div>
+</ng-template>
+<div class="container text-center">
+    <span style="margin-top: 80px;margin-bottom: 20px;" class="title">Bienvenidos a la</span>
+    <div>
+      <div class="d-flex  flex-row justify-content-center">
+        <img  style="height: 150px; margin-top: 40px;" src="assets/image/logo.png">
+        <div class="d-flex flex-column" style="margin-top: 30px;">
+          <span style="margin-top: 50px;" class="title">KINITO'S</span>
+          <span style="margin-top: 20px; margin-left: -100px;"class="subtitle">LEAGUE</span>
+        </div>
+
+      </div>
+      <div style="margin-top: 40px;" class="d-flex  flex-row justify-content-center">
+        <div class="count-down-timer">
+
+          <div class="wrapper">
+            <div class="description">
+              <p>Days</p>
+              <p>Hours</p>
+              <p>Minutes</p>
+              <p>Seconds</p>
+            </div>
+            <div class="times">
+              <p #days></p>
+              <p #hours></p>
+              <p #minutes></p>
+              <p #seconds></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center text-center">
+        <button (click)="goToParticipantes()">COMENZAR</button>
+      </div>
+
+    </div>
+</div>
+<iframe type="audio/mp3" allow="autoplay" style="display: none"
+  src="https://ia800206.us.archive.org/16/items/SilentRingtone/silence_64kb.mp3">
+</iframe>
+
+<audio autoplay loop #audio>
+  <source src="../../assets/music/quedate.mp3" type="audio/mp3">
+</audio>
+<button #button style="visibility: hidden"></button>
+

@@ -1,0 +1,51 @@
+
+<div class="text-center">
+  <div class="text-center" style="margin-top: 60px;" class="header-title">
+    <span class="title text-center" style="font-weight: bold; color: white;">CLASIFICACION</span>
+  </div>
+</div>
+<div style="padding:40px">
+
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th  class="text-center"scope="col">#</th>
+        <th class="text-center" scope="col">TEAM</th>
+        <th class="text-center" scope="col">PJ</th>
+        <th class="text-center" scope="col">PG</th>
+        <th class="text-center" scope="col">PP</th>
+        <th class="text-center" scope="col">PF</th>
+        <th class="text-center" scope="col">PC</th>
+        <th class="text-center" scope="col">DP</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let team of teamsList; let i = index">
+        <th  class="text-center" style="font-size: 20px; font-weight: bold;"  scope="row">{{i+1}}</th>
+        <td class="text-center">{{team.name | uppercase}}</td>
+        <td class="text-center">{{team.partidosJugados}}</td>
+        <td class="text-center">{{team.wins}}</td>
+        <td class="text-center">{{team.loses}}</td>
+        <td class="text-center">{{team.puntosFavor}}</td>
+        <td class="text-center">{{team.puntosContra}}</td>
+        <td class="text-center">{{team.puntosFavor - team.puntosContra}}</td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+<div class="d-flex flex-row justify-content-around" style="margin:40px; padding:20px; border:1px solid white; background-color: #222529;">
+  <select [(ngModel)]="teamLocal">
+    <option *ngFor="let team of teamsList" [ngValue]="team">{{team.name}}</option>
+  </select>
+  <input type="number" [(ngModel)]="puntosLocal"  style="width: 100px;">
+  <label style="font-weight: bold; font-size: 50px; color: white;margin-top: 20px;">VS</label>
+  <input type="number"  [(ngModel)]="puntosVisitante" style="width: 100px;">
+  <select [(ngModel)]="teamVisitante">
+    <option *ngFor="let team of teamsList" [ngValue]="team">{{team.name}}</option>
+  </select>
+</div>
+<div class="d-flex justify-content-center">
+  <button (click)="addMatch()" class="addMatch" style="margin-top: -20px;">AÑADIR PARTIDO</button>
+</div>
+

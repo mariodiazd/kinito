@@ -1,0 +1,41 @@
+table{
+  color: white;
+  border: 1px solid white;
+  border-radius: 10%;
+}
+
+th{
+  font-size: 20px; font-weight: bold;
+  border: 1px solid white;
+}
+
+td{
+  font-size: 14px; font-weight: bold;
+  border: 1px solid white;
+}
+
+select{
+  width: 200px;
+  height: 60px;
+  background-color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.addMatch{
+  background-color: white;
+  color:#222529;
+  font-weight: bold;
+  &:hover{
+    color: white;
+    background-color: #222529;
+  }
+}
+
+input{
+  width: 100px;
+  background-color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
