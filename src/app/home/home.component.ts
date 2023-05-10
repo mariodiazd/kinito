@@ -57,8 +57,8 @@ export class HomeComponent implements OnInit {
   ];
   usersList$ = liveQuery(() => db.usersList.toArray());
   users$ = liveQuery(() => this.getUsers());
-  admin:boolean = false;
-  isMobile:boolean = false;
+  admin: boolean = false;
+  isMobile: boolean = false;
   currentTime: any = `${
     this.months[this.targetDate.getMonth()]
   } ${this.targetDate.getDate()}, ${this.targetDate.getFullYear()}`;
@@ -77,36 +77,34 @@ export class HomeComponent implements OnInit {
   constructor(
     private toastr: ToastrService,
     private modalService: NgbModal,
-    private deviceDetector:DeviceDetectorService,
+    private deviceDetector: DeviceDetectorService,
     private activatedRoute: ActivatedRoute,
     private router: Router
   ) {
-    if (this.activatedRoute.snapshot.params['admin'])
-    {
+    if (this.activatedRoute.snapshot.params['admin']) {
       this.admin = true;
     }
-
   }
 
   ngAfterViewInit() {
     this.isMobile = this.checkIfMobile();
   }
 
-  checkIfMobile(){
+  checkIfMobile() {
     return this.deviceDetector.isMobile();
-
   }
 
-  comenzarFake(){
+  comenzarFake() {
+    alert('¿Como están los máquinas? \n Confirmame tu asistencia');
     this.audio.nativeElement.play();
-      this.text.nativeElement.innerHTML = `autoplay: ${
-        this.audio.nativeElement.autoplay ? 'on' : 'off'
-      } loop: ${this.audio.nativeElement.loop} muted: ${
-        this.audio.nativeElement.muted
-      }`;
+    this.text.nativeElement.innerHTML = `autoplay: ${
+      this.audio.nativeElement.autoplay ? 'on' : 'off'
+    } loop: ${this.audio.nativeElement.loop} muted: ${
+      this.audio.nativeElement.muted
+    }`;
 
-      this.btn.nativeElement.click();
-      this.audio.nativeElement.play();
+    this.btn.nativeElement.click();
+    this.audio.nativeElement.play();
   }
 
   ngOnInit() {
@@ -122,8 +120,6 @@ export class HomeComponent implements OnInit {
       this.getUsers();
     });
   }
-
-
 
   async getUsers() {
     const users = await db.users
