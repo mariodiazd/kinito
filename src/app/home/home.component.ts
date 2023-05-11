@@ -90,8 +90,7 @@ export class HomeComponent implements OnInit {
     this.isMobile = this.checkIfMobile();
   }
 
-  setBackGround(){
-  }
+  setBackGround() {}
 
   checkIfMobile() {
     return this.deviceDetector.isMobile();
