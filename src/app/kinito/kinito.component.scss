@@ -26,7 +26,6 @@
 }
 
 .container-participants{
-  margin-top: 20px;
   max-height: 500px;
   overflow: scroll;
 }
@@ -66,7 +65,8 @@ label{
 .circular--square { border-radius: 50%; margin: 10px;}
 
 .card-profile{
-  border: 1px solid white;
+  border: 1px solid lightgray;
+  background-color: #222529;
   border-radius: 10px;
   height: 160px;
   margin: 10px;
@@ -74,7 +74,8 @@ label{
 }
 
 .card-profile-teams{
-  border: 1px solid white;
+  background-color: #222529;
+  border: 1px solid lighgray;
   border-radius: 10px;
   height: 200px;
   margin: 10px;

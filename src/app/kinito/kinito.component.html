@@ -77,10 +77,10 @@
     >
   </div>
   <div *ngIf="showParticipantes" class="container-participants">
-    <div class="grid" style="margin-top: 40px">
+    <div class="grid" style="margin-top: 10px">
       <ng-container *ngFor="let user of users">
         <div style="margin: 20px">
-          <div class="container card-profile">
+          <div (click)="deleteUser(user.id)" class="container card-profile">
 
             <div class="d-flex flex-row">
               <div>
@@ -96,9 +96,6 @@
               >
                 <label>{{ user.name }} {{ user.firstName }}</label>
 
-              </div>
-              <div class="d-flex justify-content-end">
-                <button style="width: 40px;" (click)="deleteUser(user.id)">X</button>
               </div>
             </div>
 

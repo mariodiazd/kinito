@@ -1,23 +1,36 @@
 table{
   color: white;
-  border: 1px solid white;
-  border-radius: 10%;
+  border-radius: 10px;
 }
 
 th{
   font-size: 20px; font-weight: bold;
-  border: 1px solid white;
 }
 
 td{
   font-size: 14px; font-weight: bold;
-  border: 1px solid white;
+}
+
+.green{
+  background-color: green;
+}
+
+.blue{
+  background-color: blue;
+}
+
+.orange{
+  background-color: orange;
+}
+
+.red {
+  background-color: red;
 }
 
 select{
   width: 200px;
   height: 60px;
-  background-color: white;
+  background-color: lightgray;
   font-size: 18px;
   font-weight: bold;
   text-align: center;
@@ -28,14 +41,14 @@ select{
   color:#222529;
   font-weight: bold;
   &:hover{
-    color: white;
+    color: lightgray;
     background-color: #222529;
   }
 }
 
 input{
   width: 100px;
-  background-color: white;
+  background-color: lightgray;
   font-size: 18px;
   font-weight: bold;
 }

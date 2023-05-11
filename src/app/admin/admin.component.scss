@@ -44,11 +44,13 @@
 .bracket{
   display: flex;
   justify-content: center;
+  background-color: #222529;
+  border-radius: 5px;
+  border: 1px solid lightgray;
   align-items: center;
   vertical-align: middle;
   width: 200px;
   height: 60px;
-  border:1px solid lightgray;
   margin: 20px;
   span{
     color: white;
@@ -65,7 +67,9 @@
   vertical-align: middle;
   width: 200px;
   height: 60px;
-  border:1px solid lightgray;
+  background-color: #222529;
+  border-radius: 5px;
+  border: 1px solid lightgray;
   margin: 40px;
   span{
     color: white;

@@ -68,31 +68,10 @@ export class AppDB extends Dexie {
       },
       {
         usersListId,
-        name: 'Pedro',
-        firstName: 'Ferrero',
-        role: 'user',
-        photo: 'assets/fotos/pedro.png'
-      },
-      {
-        usersListId,
         name: 'Dani',
         firstName: 'Estrada',
         role: 'user',
         photo: 'assets/fotos/dani.png'
-      },
-      {
-        usersListId,
-        name: 'Alba',
-        firstName: 'García',
-        role: 'user',
-        photo: 'assets/fotos/albag.png'
-      },
-      {
-        usersListId,
-        name: 'Anaiss',
-        firstName: 'Cuevas',
-        role: 'user',
-        photo: 'assets/fotos/anaiss.png'
       },
       {
         usersListId,
@@ -110,13 +89,6 @@ export class AppDB extends Dexie {
       },
       {
         usersListId,
-        name: 'David',
-        firstName: 'Cobo',
-        role: 'user',
-        photo: 'assets/fotos/cobo.png'
-      },
-      {
-        usersListId,
         name: 'Erik',
         firstName: 'Velazquez',
         role: 'user',
@@ -128,20 +100,6 @@ export class AppDB extends Dexie {
         firstName: 'Rumoroso',
         role: 'user',
         photo: 'assets/fotos/fiti.png'
-      },
-      {
-        usersListId,
-        name: 'Oscar',
-        firstName: 'Saiz',
-        role: 'user',
-        photo: 'assets/fotos/gorri.png'
-      },
-      {
-        usersListId,
-        name: 'Laro',
-        firstName: 'Fernandez',
-        role: 'user',
-        photo: 'assets/fotos/laro.png'
       },
       {
         usersListId,
