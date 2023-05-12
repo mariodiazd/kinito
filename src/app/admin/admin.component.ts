@@ -40,24 +40,29 @@ export class AdminComponent implements OnInit {
     this.sexto = this.teamsList[5];
   }
 
-  setGanadorCuartoVsQuinto(team:Team){
+  setGanadorCuartoVsQuinto(team:Team, perdedor:Team){
     this.ganadorCuartoVsQuinto = team;
+    perdedor.eliminado = true;
   }
 
-  setGanadorTerceroVsSexto(team:Team){
-    this.ganadorTerceroVsSexto = team;
+  setGanadorTerceroVsSexto(ganador:Team, perdedor:Team){
+    this.ganadorTerceroVsSexto = ganador;
+    perdedor.eliminado = true;
   }
 
-  setGanadorSemifinalUno(team:Team){
-    this.ganadorSemifinalUno = team;
+  setGanadorSemifinalUno(ganador:Team, perdedor:Team){
+    this.ganadorSemifinalUno = ganador;
+    perdedor.eliminado = true;
   }
 
-  setGanadorSemifinalDos(team:Team){
-    this.ganadorSemifinalDos = team;
+  setGanadorSemifinalDos(ganador:Team, perdedor:Team){
+    this.ganadorSemifinalDos = ganador;
+    perdedor.eliminado = true;
   }
 
-  setCampeon(team:Team){
-    this.campeon = team;
+  setCampeon(ganador:Team, perdedor:Team){
+    this.campeon = ganador;
+    perdedor.eliminado = true;
   }
 
   getTeams() {

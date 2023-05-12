@@ -17,6 +17,7 @@ export interface Team {
   puntosFavor:number;
   puntosContra:number;
   partidosJugados: number;
+  eliminado?:boolean;
 }
 export interface User {
   id?: number;
@@ -129,13 +130,13 @@ export class AppDB extends Dexie {
         role: 'user',
         photo: 'assets/fotos/maza.png'
       },
-      {
-        usersListId,
-        name: 'Pablo',
-        firstName: 'Rodriguez',
-        role: 'user',
-        photo: 'assets/fotos/rodri.png'
-      },
+      // {
+      //   usersListId,
+      //   name: 'Pablo',
+      //   firstName: 'Rodriguez',
+      //   role: 'user',
+      //   photo: 'assets/fotos/rodri.png'
+      // },
       {
         usersListId,
         name: 'Tomás',
@@ -143,13 +144,13 @@ export class AppDB extends Dexie {
         role: 'user',
         photo: 'assets/fotos/tommy.png'
       },
-      {
-        usersListId,
-        name: 'Javier',
-        firstName: 'Fernandez',
-        role: 'user',
-        photo: 'assets/fotos/javi.png'
-      },
+      // {
+      //   usersListId,
+      //   name: 'Javier',
+      //   firstName: 'Fernandez',
+      //   role: 'user',
+      //   photo: 'assets/fotos/javi.png'
+      // },
     ]);
 
     await db.teams.bulkAdd([]);

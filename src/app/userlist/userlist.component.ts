@@ -17,6 +17,7 @@ export class UserlistComponent implements OnInit {
   teamsList$ = liveQuery(() => db.teams.toArray());
   teamLocal:Team  | any = -1;
   teamVisitante:Team | any = -1;
+  activateButton:boolean = false
   puntosLocal:number = 0;
   puntosVisitante:number = 0;
 
@@ -31,6 +32,30 @@ export class UserlistComponent implements OnInit {
       this.teamsList = res;
       this.teamsList = this.teamsList.sort((a, b)=> a.wins > b.wins ? -1 : 1).sort((a, b)=> a.puntosFavor > b.puntosFavor ? -1 : 1)
     });
+  }
+
+  checkMatches():boolean{
+    const partidos = this.teamsList.length -1;
+    let resultado = true;
+    this.teamsList.forEach(team => {
+      if (team.partidosJugados < partidos)
+      {
+        resultado = false;
+      }
+    });
+    this.activateButton = resultado;
+    return resultado
+  }
+
+  goCuadro(){
+    if (this.checkMatches())
+    {
+      this.router.navigateByUrl('/playoffs');
+    } else
+    {
+      alert("Los equipos tienen que jugar todos sus partidos");
+    }
+
   }
 
   getGanador(teamLocalPoints:number, teamVisitantePoints:number){

@@ -14,38 +14,38 @@
   <div class="cuadro d-flex flex-row">
     <div class="roundOne">
       <div class="container d-flex flex-column">
-        <div (click)="setGanadorTerceroVsSexto(tercero)" class="bracketOne">
-          <span  >{{tercero.name}}</span>
+        <div  (click)="setGanadorTerceroVsSexto(tercero, sexto)" class="bracketOne">
+          <span  [ngClass]="{'eliminado': tercero.eliminado === true}" >{{tercero.name}}</span>
         </div>
-        <div  (click)="setGanadorTerceroVsSexto(sexto)"class="bracketOne">
-          <span>{{sexto.name}}</span>
+        <div  (click)="setGanadorTerceroVsSexto(sexto, tercero)"class="bracketOne">
+          <span [ngClass]="{'eliminado': sexto.eliminado === true}">{{sexto.name}}</span>
         </div>
       </div>
       <div class="container d-flex flex-column">
-        <div (click)="setGanadorCuartoVsQuinto(cuarto)" class="bracketOne">
-          <span>{{cuarto.name}}</span>
+        <div (click)="setGanadorCuartoVsQuinto(cuarto, quinto)" class="bracketOne">
+          <span [ngClass]="{'eliminado': cuarto.eliminado === true}">{{cuarto.name}}</span>
         </div>
-        <div (click)="setGanadorCuartoVsQuinto(quinto)" class="bracketOne">
-          <span>{{quinto.name}}</span>
+        <div (click)="setGanadorCuartoVsQuinto(quinto, cuarto)" class="bracketOne">
+          <span [ngClass]="{'quinto': tercero.eliminado === true}">{{quinto.name}}</span>
         </div>
       </div>
     </div>
     <div class="roundTwo">
 
       <div class="container d-flex flex-column">
-        <div (click)="setGanadorSemifinalUno(ganadorTerceroVsSexto)" class="bracket"><span *ngIf="ganadorTerceroVsSexto">{{ganadorTerceroVsSexto?.name}}</span></div>
-        <div (click)="setGanadorSemifinalUno(segundo)" class="bracket"><span>{{segundo.name}}</span></div>
+        <div (click)="setGanadorSemifinalUno(ganadorTerceroVsSexto, segundo)" class="bracket"><span [ngClass]="{'eliminado': ganadorTerceroVsSexto.eliminado === true}" *ngIf="ganadorTerceroVsSexto">{{ganadorTerceroVsSexto?.name}}</span></div>
+        <div (click)="setGanadorSemifinalUno(segundo, ganadorTerceroVsSexto)" class="bracket"><span>{{segundo.name}}</span></div>
       </div>
       <div class="container d-flex flex-column">
-        <div (click)="setGanadorSemifinalDos(ganadorCuartoVsQuinto)" class="bracket"><span *ngIf="ganadorCuartoVsQuinto">{{ganadorCuartoVsQuinto?.name}}</span></div>
-        <div (click)="setGanadorSemifinalDos(primero)" class="bracket"><span>{{primero.name}}</span></div>
+        <div (click)="setGanadorSemifinalDos(ganadorCuartoVsQuinto, primero)" class="bracket"><span  [ngClass]="{'eliminado': ganadorCuartoVsQuinto.eliminado === true}"  *ngIf="ganadorCuartoVsQuinto">{{ganadorCuartoVsQuinto?.name}}</span></div>
+        <div (click)="setGanadorSemifinalDos(primero, ganadorCuartoVsQuinto)" class="bracket"><span [ngClass]="{'eliminado': primero.eliminado === true}" >{{primero.name}}</span></div>
       </div>
     </div>
     <div class="roundFinal">
 
       <div class="container d-flex flex-column">
-        <div (click)="setCampeon(ganadorSemifinalUno)" class="bracket"><span *ngIf="ganadorSemifinalUno">{{ganadorSemifinalUno.name}}</span></div>
-        <div (click)="setCampeon(ganadorSemifinalDos)" class="bracket"><span *ngIf="ganadorSemifinalDos" >{{ganadorSemifinalDos.name}}</span></div>
+        <div (click)="setCampeon(ganadorSemifinalUno, ganadorSemifinalDos)" class="bracket"><span [ngClass]="{'eliminado': ganadorSemifinalUno.eliminado === true}"  *ngIf="ganadorSemifinalUno">{{ganadorSemifinalUno.name}}</span></div>
+        <div (click)="setCampeon(ganadorSemifinalDos, ganadorSemifinalUno)" class="bracket"><span [ngClass]="{'eliminado': ganadorSemifinalDos.eliminado === true}" *ngIf="ganadorSemifinalDos" >{{ganadorSemifinalDos.name}}</span></div>
       </div>
     </div>
     <div class="champion">
